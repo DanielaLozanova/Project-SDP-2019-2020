@@ -8,6 +8,7 @@ int main()
 	Tree t;
 	t.add(1);
 	t.add(1);
-	t.add(3);
+	t.add(1);
+	t.remove(2);
 	return 0;
 }

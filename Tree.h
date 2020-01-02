@@ -22,5 +22,7 @@ public:
 	~Tree();
 	
 	void add(int boss);
+	void removeLeaf(Node *& root, int boss);
+	void remove(int boss);
 };
 

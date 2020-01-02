@@ -14,7 +14,6 @@ void Tree::clear(Node *&root) {
 		clear(root->child[i]);
 
 	delete root;
-	//return;
 }
 Tree::Tree()
 {
@@ -30,7 +29,6 @@ void Tree::addLeaf(Node *& root,int boss)
 {
 	if (!root)
 	{
-		//Node *root = newNode(id);
 		return;
 	}
 
@@ -52,4 +50,30 @@ void Tree::addLeaf(Node *& root,int boss)
 void Tree::add(int boss)
 {
 	addLeaf(root, boss);
+}
+
+void Tree::removeLeaf(Node *& root, int boss)
+{
+	if (!root)
+	{
+		return;
+	}
+
+	for (size_t i = 0; i <= root->child.size(); ++i)
+	{
+		if (root->key == boss)
+		{
+			root->child.erase(root->child.begin() + i);
+			return;
+		}
+		else
+		{
+			removeLeaf(root->child[i], boss);
+		}
+	}
+}
+
+void Tree::remove(int boss)
+{
+	removeLeaf(root, boss);
 }

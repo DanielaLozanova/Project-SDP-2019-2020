@@ -15,14 +15,14 @@ private:
 	Node* root;
 	static int id;
 
-	void clear(Node *&root);
-	void addLeaf(Node *&root, int boss);
+	void clear(Node *root);
+	void addLeaf(Node *root, int boss);
 public:
 	Tree();
 	~Tree();
 	
 	void add(int boss);
-	void removeLeaf(Node *& root, int boss);
+	void removeLeaf(Node* root, int boss);
 	void remove(int boss);
 };
 
